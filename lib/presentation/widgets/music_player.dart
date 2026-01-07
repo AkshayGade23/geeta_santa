@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geeta_santha/core/constants/colors.dart';
 import 'package:geeta_santha/core/utils/calculate_width_height.dart';
 import 'package:geeta_santha/core/utils/format_time.dart';
-import 'package:geeta_santha/presentation/widgets/squiggly_slider.dart';
+
 
 class MusicPlayer extends StatelessWidget {
   final double currentSeconds;
@@ -61,7 +61,7 @@ class MusicPlayer extends StatelessWidget {
         ) : BoxDecoration(),
         child: Icon(
           icon,
-          color:  isPlayPause! || showBackground! ? Colors.white : gradientColors![0],
+          color:  isPlayPause || showBackground! ? Colors.white : gradientColors![0],
           size: scaleWidth(context, iconSize!),
         ),
       ),

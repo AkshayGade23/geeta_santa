@@ -49,6 +49,20 @@ class _ShlokSelectionState extends State<ShlokSelection>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
+    final shlokNumberStyle = TextStyle(
+      fontSize: scaleFont(context, 12),
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      decoration: TextDecoration.none,
+    );
+
+    final okButtonStyle = TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      fontSize: scaleFont(context, 16),
+      decoration: TextDecoration.none,
+    );
+
     return ScaleTransition(
       scale: _scaleAnimation,
       child: Center(
@@ -71,12 +85,12 @@ class _ShlokSelectionState extends State<ShlokSelection>
               // Header
               Container(
                 width: double.infinity,
-                padding:  EdgeInsets.symmetric(vertical: scaleHeight(context,20)),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
+                padding: EdgeInsets.symmetric(vertical: scaleHeight(context, 20)),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20)),
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     colors: [Color(0xFF5F2EEA), Color(0xFF3A86FF)],
                   ),
                 ),
@@ -88,6 +102,7 @@ class _ShlokSelectionState extends State<ShlokSelection>
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
                       letterSpacing: 1,
+                      decoration: TextDecoration.none,
                     ),
                   ),
                 ),
@@ -98,7 +113,8 @@ class _ShlokSelectionState extends State<ShlokSelection>
               // Grid of shloks
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: scaleWidth(context,12)),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: scaleWidth(context, 12)),
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 5,
@@ -108,7 +124,6 @@ class _ShlokSelectionState extends State<ShlokSelection>
                     ),
                     itemCount: widget.numberOfShloks,
                     itemBuilder: (context, index) {
-                  
                       return GestureDetector(
                         onTap: () {
                           setState(() {
@@ -116,25 +131,22 @@ class _ShlokSelectionState extends State<ShlokSelection>
                           });
                         },
                         child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                      
-                          color: selectedItem == index
-                              ? primaryPurple
-                              : primaryBlue,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: selectedItem == index
+                                ? primaryPurple
+                                : primaryBlue,
+                          ),
+                          margin: EdgeInsets.symmetric(
+                              horizontal: scaleWidth(context, 6),
+                              vertical: scaleHeight(context, 6)),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "${index + 1}",
+                            textAlign: TextAlign.center,
+                            style: shlokNumberStyle,
+                          ),
                         ),
-                        margin:  EdgeInsets.symmetric(horizontal: scaleWidth(context, 6), vertical: scaleHeight(context, 6)),
-                        alignment: Alignment.center,
-                      
-                        child: Text(
-                          "${index+1}",
-                          textAlign: TextAlign.center,
-                          style:  TextStyle(
-                            fontSize: scaleFont(context,12),
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
                       );
                     },
                   ),
@@ -143,7 +155,7 @@ class _ShlokSelectionState extends State<ShlokSelection>
 
               // OK button
               Padding(
-                padding:  EdgeInsets.symmetric(vertical: scaleHeight(context, 12)),
+                padding: EdgeInsets.symmetric(vertical: scaleHeight(context, 12)),
                 child: GestureDetector(
                   onTap: () {
                     if (selectedItem != -1) {
@@ -152,21 +164,18 @@ class _ShlokSelectionState extends State<ShlokSelection>
                     Navigator.pop(context);
                   },
                   child: Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: scaleWidth(context, 40), vertical: scaleHeight(context, 14)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: scaleWidth(context, 40),
+                        vertical: scaleHeight(context, 14)),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       gradient: const LinearGradient(
                         colors: [Color(0xFF5F2EEA), Color(0xFF3A86FF)],
                       ),
                     ),
-                    child:  Text(
+                    child: Text(
                       "OK",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: scaleFont(context,16),
-                      ),
+                      style: okButtonStyle,
                     ),
                   ),
                 ),

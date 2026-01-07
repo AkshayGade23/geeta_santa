@@ -3,7 +3,7 @@ import 'package:geeta_santha/core/constants/adhay_details.dart';
 import 'package:geeta_santha/core/constants/colors.dart';
 import 'package:geeta_santha/core/utils/calculate_width_height.dart';
 import 'package:geeta_santha/core/utils/format_time.dart';
-import 'package:geeta_santha/data/models/shlok.dart';
+
 import 'package:geeta_santha/data/repositories/get_all_adhyay_shloks.dart';
 import 'package:geeta_santha/presentation/screens/adhyay_overview_screen.dart';
 import 'package:provider/provider.dart';

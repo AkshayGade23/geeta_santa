@@ -42,15 +42,15 @@ class _VersePageState extends State<VersePage> {
 
   void onPlayPause() {
     if (_player.isCurrentShlok(widget.shlok.chapterNo, widget.shlok.shlokNo)) {
-      print(
-        "Logs VersePage-onPlayPause Playing/Pausing chap-${widget.shlok.chapterNo} shlok-${widget.shlok}.shlokNo",
-      );
+      // print(
+      //   "Logs VersePage-onPlayPause Playing/Pausing chap-${widget.shlok.chapterNo} shlok-${widget.shlok}.shlokNo",
+      // );
       _player.playPause();
     } else {
       // playing if there is none or another shlok
-      print(
-        "Logs VersePage-onPlayPause Playing chap-${widget.shlok.chapterNo} shlok-${widget.shlok.shlokNo}",
-      );
+      // print(
+      //   "Logs VersePage-onPlayPause Playing chap-${widget.shlok.chapterNo} shlok-${widget.shlok.shlokNo}",
+      // );
 
       _player.setIsRepeactCurrent(false);
       _player.playShlokFromPlaylist(widget.shlok.shlokNo);
@@ -58,24 +58,24 @@ class _VersePageState extends State<VersePage> {
   }
 
   void onAutoPlay() {
-    print(
-      "Logs VersePage-onStop Stoping chap-${_player.activePlaylistIndex! + 1} shlok-${_player.currentShlokIndex + 1}",
-    );
+    // print(
+    //   "Logs VersePage-onStop Stoping chap-${_player.activePlaylistIndex! + 1} shlok-${_player.currentShlokIndex + 1}",
+    // );
     _player.setAutoPlay(!_player.isAutoPlay!);
   }
 
 
   void onRepeatCurrent() {
-    print(
-      "Logs VersePage-onRestart Restarting chap-${_player.activePlaylistIndex! + 1} shlok-${_player.currentShlokIndex + 1}",
-    );
+    // print(
+    //   "Logs VersePage-onRestart Restarting chap-${_player.activePlaylistIndex! + 1} shlok-${_player.currentShlokIndex + 1}",
+    // );
     _player.setIsRepeactCurrent(!_player.isRepeatCurrent!);
   }
 
   void onSeek(double seconds) {
-    print(
-      "Logs VersePage-onSeek Seeking chap-${_player.activePlaylistIndex! + 1} shlok-${_player.currentShlokIndex + 1}",
-    );
+    // print(
+    //   "Logs VersePage-onSeek Seeking chap-${_player.activePlaylistIndex! + 1} shlok-${_player.currentShlokIndex + 1}",
+    // );
     _player.seek(seconds);
   }
 

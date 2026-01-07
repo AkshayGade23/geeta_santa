@@ -55,7 +55,6 @@ class _AdhyayOverviewScreenState extends State<AdhyayOverviewScreen> {
       context: context,
       builder: (_) => ShlokSelection(
         pageController: _pageController,
-
         numberOfShloks: numberOfShloks, // pass shlok numbers or titles3
       ),
     );

@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     final allPresent = await storage.areAllFilesPresent();
    
-    print("Does all Audio file present - $allPresent");
+    // print("Does all Audio file present - $allPresent");
     if (!mounted) return;
 
     Navigator.pushReplacement(

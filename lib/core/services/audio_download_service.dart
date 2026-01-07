@@ -34,7 +34,7 @@ class AudioBulkDownloadService {
 
     final zipUrl = '$_baseUrl/chapter$chapterStr.zip';
 
-    print("downlaoding chapter.zip - ----- $zipUrl");
+    // print("downlaoding chapter.zip - ----- $zipUrl");
 
     final zipPath =
         await _storage.getTempZipPath(chapterStr);
@@ -49,7 +49,7 @@ class AudioBulkDownloadService {
       destinationPath: rootDir.path,
     );
     
-    print("Downloaded and extracted chapter.zip - ----- $zipUrl");
+    // print("Downloaded and extracted chapter.zip - ----- $zipUrl");
     // Cleanup ZIP
     await File(zipPath).delete();
   }

@@ -67,9 +67,9 @@ class PlaylistProvider extends ChangeNotifier {
 
   bool isCurrentShlok(int chapterNo, int shlokNo) {
     if(_activePlaylistIndex == null) return false;
-    print(
-      "Logs Provider-isCurrentShlok chap-${_activePlaylistIndex!+1} sholk-${_currentShlokIndex+1} ,  my chap-$chapterNo sholk-$shlokNo",
-    );
+    // print(
+    //   "Logs Provider-isCurrentShlok chap-${_activePlaylistIndex!+1} sholk-${_currentShlokIndex+1} ,  my chap-$chapterNo sholk-$shlokNo",
+    // );
     return hasActiveTrack &&
         (_activePlaylistIndex!+1 == chapterNo &&
             _currentShlokIndex+1 == shlokNo);
