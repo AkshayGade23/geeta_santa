@@ -127,6 +127,7 @@ class MusicPlayer extends StatelessWidget {
                   context: context,
                   showBackground: isCurrent && isRepeatCurrent,
                 ),
+                SizedBox(height: scaleHeight(context, 8)),
                 Text("Repeat")
               ],
             ),
@@ -160,6 +161,7 @@ class MusicPlayer extends StatelessWidget {
                   context: context,
                   showBackground:  isAutoPlay,
                 ),
+                SizedBox(height: scaleHeight(context, 8)),
                 Text("Auto")
               ],
                

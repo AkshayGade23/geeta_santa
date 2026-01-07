@@ -99,11 +99,18 @@ class _DownloadScreenState extends State<DownloadScreen>   {
              SizedBox(height: scaleHeight(context, 16)),
 
               Text(
-                "$completed / $total files",
+                "$completed / $total files - Total 167Mb",
                 style: const TextStyle(
                   fontWeight: FontWeight.w500,
                 ),
               ),
+            
+              Text(
+                "- Restart app if it gets stuck -",
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                ),
+              )
             ],
           ),
         ),

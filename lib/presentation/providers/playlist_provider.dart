@@ -87,10 +87,12 @@ class PlaylistProvider extends ChangeNotifier {
 
   void setIsRepeactCurrent(bool  isRepeatCurrent){
       _isRepeatCurrent = isRepeatCurrent;
+      if(isRepeatCurrent) _isAutoPlay = false;
   }
 
   void setAutoPlay(bool isAutoPlay){
     _isAutoPlay = isAutoPlay;
+    if(isAutoPlay) _isRepeatCurrent = false;
   }
 
   Future<void> playShlokFromPlaylist(int shlokNo) async {
@@ -179,11 +181,13 @@ class PlaylistProvider extends ChangeNotifier {
 
   void _handleTrackCompletion() {
   if (_activePlaylistIndex == null) return;
-  if(!_isAutoPlay) return;
+  
   if(_isRepeatCurrent){
     _playCurrent();
     return;
   }
+
+  if(!_isAutoPlay) return;
 
   if (_currentShlokIndex < shlokCounts[_activePlaylistIndex!]-1) {
     // ▶️ play next shlok
